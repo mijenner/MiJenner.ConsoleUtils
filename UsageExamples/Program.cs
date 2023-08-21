@@ -13,7 +13,7 @@ namespace UsageExamples
       {
          ConsoleUtils.OpenExplorerFinder();
 
-         ConsoleUtils.OpenExplorerFinderPath("."); 
+         // ConsoleUtils.OpenExplorerFinderPath("."); 
 
          var a = ConsoleUtils.ReadInt("Please provide an integer", "No, please provide an integer");
 

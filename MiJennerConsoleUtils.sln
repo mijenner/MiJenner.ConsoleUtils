@@ -5,7 +5,7 @@ VisualStudioVersion = 17.7.34009.444
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiJenner", "MiJenner\MiJenner.csproj", "{5B221561-BD99-4DC8-A31F-E3179121E36E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsageExamples", "UsageExamples\UsageExamples.csproj", "{6D6CE20A-9177-406D-8BB5-0D2EE87EB385}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UsageExamples", "UsageExamples\UsageExamples.csproj", "{6D6CE20A-9177-406D-8BB5-0D2EE87EB385}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

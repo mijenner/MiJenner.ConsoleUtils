@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MiJenner</name>
+    </assembly>
+    <members>
+        <member name="M:MiJenner.ConsoleUtils.OpenExplorerFinder">
+            <summary>
+            Opens the platform specific file explorer / finder with  
+            the directory set to where the compiled executable is placed. 
+            </summary>
+            <exception cref="T:System.PlatformNotSupportedException"></exception>
+        </member>
+        <member name="M:MiJenner.ConsoleUtils.OpenExplorerFinderPath(System.String)">
+            <summary>
+            Open the platform specific file explorer / finder. 
+            <code>
+            OpenExplorerFinderPath("."); 
+            </code>
+            </summary>
+            <param name="outputDir">Is path of the directory used.</param>
+            <exception cref="T:System.PlatformNotSupportedException"></exception>
+        </member>
+        <member name="M:MiJenner.ConsoleUtils.ReadInt(System.String,System.String)">
+            <summary>
+            Reads an integer from console. 
+            Continuously asks user until a valid integer is entered. 
+            </summary>
+            <param name="prompt">Prompt to user (a space is appended by library)</param>
+            <param name="errorMessage">Error message if user types a noncompliant value (a space is appended by library)</param>
+            <returns>An integer</returns>
+        </member>
+        <member name="M:MiJenner.ConsoleUtils.ReadDouble(System.String,System.String)">
+            <summary>
+            Reads a double from console. 
+            Continuously asks user until a valid double is entered. 
+            </summary>
+            <param name="prompt">Prompt to user (a space is appended by library)</param>
+            <param name="errorMessage">Error message if user types a noncompliant value (a space is appended by library)</param>
+            <returns>Returns a double</returns>
+        </member>
+        <member name="M:MiJenner.ConsoleUtils.ReadDecimal(System.String,System.String)">
+            <summary>
+            Reads a decimal from console. 
+            Continuously asks user until a valid decimal is entered. 
+            </summary>
+            <param name="prompt">Prompt to user (a space is appended by library)</param>
+            <param name="errorMessage">Error message if user types a noncompliant value (a space is appended by library)</param>
+            <returns>Returns a decimal</returns>
+        </member>
+        <member name="M:MiJenner.ConsoleUtils.ReadBoolean(System.String,System.String,System.String,System.String)">
+            <summary>
+            Reads a boolean from console. 
+            Continuously asks user until a valid boolean is entered. 
+            <code>
+            Boolean myBool = ConsoleUtils.ReadBoolean("Please provide a boolean", "No, please provide a boolean", "t", "f");
+            </code>
+            </summary>
+            <param name="prompt">Prompt to user (a space is appended by library)</param>
+            <param name="errorMessage">Error message if user types a noncompliant value (a space is appended by library)</param>
+            <param name="trueValue">Optional: e.g. t for true (default = j)</param>
+            <param name="falseValue">Optional: e.g. f for false (default = n)</param>
+            <returns>A boolean</returns>
+        </member>
+        <member name="M:MiJenner.ConsoleUtils.ReadDate(System.String,System.String)">
+            <summary>
+            Reads a date from console. 
+            Continuously asks user until a valid date is entered. 
+            </summary>
+            <param name="prompt">Prompt to user (a space is appended by library)</param>
+            <param name="errorMessage">Error message if user types a noncompliant value (a space is appended by library)</param>
+            <returns>Returns a date (DateTime object)</returns>
+        </member>
+        <member name="M:MiJenner.ConsoleUtils.ReadEnum``1(System.String,System.String)">
+            <summary>
+            Reads the textual representation of the provided enum from console, and converts it to an enum. 
+            Continuously asks user until a valid enum is entered. 
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="prompt">Prompt to user (a space is appended by library)</param>
+            <param name="errorMessage">Error message if user types a noncompliant value (a space is appended by library)</param>
+            <returns>An enum of the specified type</returns>
+        </member>
+    </members>
+</doc>
