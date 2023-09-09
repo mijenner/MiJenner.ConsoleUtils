@@ -1,10 +1,41 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <RootNamespace>MiJenner</RootNamespace>
+    <PackageId>MiJenner.ConsoleUtils</PackageId>
+    <Title>MiJenner.ConsoleUtils</Title>
+    <Version>0.9.0</Version>
+    <Authors>Michael Jenner</Authors>
+    <Company>Jenner IT</Company>
+    <Description>ConsoleUtils offer cross-platform utilities for easy interaction with a user.
+
+There are methods for persistent reading of values of a certain data type from the console user. Pattern is ```cs Read()````. They prompt the user, and keep asking user for a value of a certain data type until she/he enters a correct data type. It offers methods for integers, doubles, decimals, boolean, dates, and enums.
+
+There is a method for reading in multiple lines of text from the user StringReadMultipleLines.
+
+There are methods for removing non-letters from strings: cs StringRemoveNonLettersENG(...) and cs StringRemoveNonLettersAll(...).
+
+Finally there are methods for opening file explorer in current directory cs OpenExplorerFinder()</Description>
+    <Copyright>Copyright (c) 2023 Jenner IT </Copyright>
+    <PackageProjectUrl>https://github.com/mijenner/MiJenner.ConsoleUtils</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/mijenner/MiJenner.ConsoleUtils</RepositoryUrl>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>

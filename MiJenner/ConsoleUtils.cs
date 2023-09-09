@@ -43,21 +43,21 @@ namespace MiJenner
       /// OpenExplorerFinderPath("."); 
       /// </code>
       /// </summary>
-      /// <param name="outputDir">Is path of the directory used.</param>
+      /// <param name="folderPath">Is path of the directory used.</param>
       /// <exception cref="PlatformNotSupportedException"></exception>
-      public static void OpenExplorerFinderPath(string outputDir)
+      public static void OpenExplorerFinderPath(string folderPath)
       {
          if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
          {
             Process.Start(new ProcessStartInfo()
             {
                FileName = "explorer.exe",
-               Arguments = outputDir
+               Arguments = folderPath
             });
          }
          else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
          {
-            Process.Start("open", outputDir);
+            Process.Start("open", folderPath);
          }
          else
          {
@@ -259,7 +259,7 @@ namespace MiJenner
          return temp.Trim();
       }
 
-      public static string StringReadMultipleLines(string prompt, string instruction = "Indtast 3 tomme linjer for at slutte")
+      public static string StringReadMultipleLines(string prompt, string instruction = "Type 3 empty lines to end")
       {
          Console.WriteLine(prompt);
          Console.WriteLine(instruction);
