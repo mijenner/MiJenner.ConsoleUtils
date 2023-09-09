@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MiJenner\MiJenner.csproj" />
+    <ProjectReference Include="..\MiJenner\MiJennerConsoleUtils.csproj" />
   </ItemGroup>
 
 </Project>
