@@ -1,30 +1,39 @@
-﻿using System;
-using MiJenner; 
+﻿using MiJenner;
+using System;
+using System.Collections.Generic;
 
 namespace UsageExamples
 {
-   enum MyEnum { Val1, Val2, Val3 }
+    public enum MyEnum { Val1, Val2, Val3 }
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            ConsoleUtils.OpenExplorerFinder();
 
-   internal class Program
-   {
-      MyEnum myEnum; 
+            // ConsoleUtils.OpenExplorerFinderPath(".");
 
-      static void Main(string[] args)
-      {
-         ConsoleUtils.OpenExplorerFinder();
+            var a = ConsoleUtils.ReadInt("Please provide an integer", "No, please provide an integer");
 
-         ConsoleUtils.OpenExplorerFinderPath("."); 
+            var b = ConsoleUtils.ReadDouble("Please provide a floating point number", "No, please provide a floating point number");
 
-         var a = ConsoleUtils.ReadInt("Please provide an integer", "No, please provide an integer");
+            var c = ConsoleUtils.ReadDate("Please provide a date", "No, please provide a date");
 
-         var b = ConsoleUtils.ReadDouble("Please provide a floating point number", "No, please provide a floating point number");
+            var d = ConsoleUtils.ReadBoolean("Please provide a boolean", "No, please provide a boolean", "t", "f");
 
-         var c = ConsoleUtils.ReadDate("Please provide a date", "No, please provide a date");
+            var e = ConsoleUtils.ReadEnum<MyEnum>("Please provide an enum, MyEnum", "No, please provide an enum, MyEnum");
 
-         var d = ConsoleUtils.ReadBoolean("Please provide a boolean", "No, please provide a boolean", "t", "f");
+            var choicesString = new Dictionary<string, string>
+            {  {"Left", "Option 1" }, {"Right", "Option 2" }, {"Back", "Option 3" } };
 
-         var e = ConsoleUtils.ReadEnum<MyEnum>("Please provide an enum, MyEnum", "No, please provide an enum, MyEnum");
+            var f = ConsoleUtils.ReadDictKey<string, string>("Type dict key (string)", "Nope", choicesString);
 
-      }
-   }
+            var choicesInt = new Dictionary<int, string>
+            { {1, "Option 1" }, {2, "Option 2" }, {3, "Option 3" } };
+
+            var g = ConsoleUtils.ReadDictKey<int, string>("Type dict key (int)", "Nope", choicesInt);
+
+        }
+    }
+
 }
