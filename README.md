@@ -1,7 +1,7 @@
 # MiJenner.ConsoleUtils
 ConsoleUtils offer cross-platform utilities for easy interaction with a user. 
 
-There are methods for persistent reading of values of a certain data type from the console user. Pattern is `Read<datatype>()`{:.cs}. They prompt the user, and keep asking user for a value of a certain data type until she/he enters a correct data type. It offers methods for integers, doubles, decimals, boolean, dates, and enums. 
+There are methods for persistent reading of values of a certain data type from the console user. Pattern is `Read<datatype>()`{:.csharp}. They prompt the user, and keep asking user for a value of a certain data type until she/he enters a correct data type. It offers methods for integers, doubles, decimals, boolean, dates, and enums. 
 
 There is a method for reading in multiple lines of text from the user ```StringReadMultipleLines()```. 
 
