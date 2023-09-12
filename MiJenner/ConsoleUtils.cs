@@ -172,8 +172,8 @@ namespace MiJenner
         /// <param name="trueValue">Optional: e.g. t for true (default = j)</param>
         /// <param name="falseValue">Optional: e.g. f for false (default = n)</param>
         /// <returns>A boolean</returns>
-        public static bool ReadBoolean(string prompt, string errorMessage, string trueValue = "j",
-           string falseValue = "n")
+        public static bool ReadBoolean(string prompt, string errorMessage, string trueValue = "t",
+           string falseValue = "f")
         {
             while (true)
             {
@@ -220,6 +220,73 @@ namespace MiJenner
         }
 
         /// <summary>
+        /// Reads a string from console. 
+        /// Continuously asks user until there is an exact match between the input and one of
+        /// the strings in the array. 
+        /// </summary>
+        /// <param name="prompt"></param>
+        /// <param name="errorMessage"></param>
+        /// <param name="strings"></param>
+        /// <returns></returns>
+        public static string ReadStringFromArray(string prompt, string errorMessage, string[] strings, bool DisplayOptions = true, string OptionText = "")
+        {
+            string input; 
+            while (true)
+            {
+                Console.Write(prompt + " : ");
+                if (DisplayOptions)
+                {
+                    Console.Write(OptionText + string.Join(" ", strings));
+                    Console.Write(" : ");
+                }
+                input = Console.ReadLine();
+
+                if (strings.Contains(input))
+                {
+                    return input;
+                }
+                else
+                {
+                    Console.WriteLine(errorMessage);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Reads a string from console. 
+        /// Continuously asks user until there is an exact match between the input and one of
+        /// the strings in a List of strings. 
+        /// </summary>
+        /// <param name="prompt"></param>
+        /// <param name="errorMessage"></param>
+        /// <param name="strings"></param>
+        /// <returns></returns>
+        public static string ReadStringFromList(string prompt, string errorMessage, List<string> strings, bool DisplayOptions = true, string OptionText = "")
+        {
+            string input;
+            while (true)
+            {
+                Console.Write(prompt + " : ");
+                if (DisplayOptions)
+                {
+                    Console.Write(OptionText + string.Join(" ", strings));
+                    Console.Write(" : ");
+                }
+                input = Console.ReadLine();
+
+                if (strings.Contains(input))
+                {
+                    return input;
+                }
+                else
+                {
+                    Console.WriteLine(errorMessage);
+                }
+            }
+        }
+
+
+        /// <summary>
         /// Reads the textual representation of the provided enum from console, and converts it to an enum. 
         /// Continuously asks user until a valid enum is entered. 
         /// </summary>
@@ -234,7 +301,6 @@ namespace MiJenner
                 Console.Write(prompt + " : ");
                 if (DisplayOptions)
                 {
-//                    Console.Write(string.Join("  ", Enum.GetValues(typeof(T)).ToString()));
                     Console.Write(OptionText + string.Join("  ", Enum.GetValues(typeof(T)).Cast<T>().Select(enumValue => enumValue.ToString())));
 
                     Console.Write(" : ");

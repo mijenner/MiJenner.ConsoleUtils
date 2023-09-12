@@ -19,6 +19,8 @@ Below is listed the signatures of the methods:
 * ```cs public static decimal ReadDecimal(string prompt, string errorMessage)```
 * ```cs public static bool ReadBoolean(string prompt, string errorMessage, string trueValue = "j", string falseValue = "n")```
 * ```cs public static DateTime ReadDate(string prompt, string errorMessage)```
+* ```cs public static string ReadStringFromArray(string prompt, string errorMessage, string[] strings)```
+* ```cs public static string ReadStringFromList(string prompt, string errorMessage, List<string> strings)```
 * ```cs public static T ReadEnum<T>(string prompt, string errorMessage) where T : struct, Enum```
 * ```cs public static TKey ReadDictKey<TKey, TValue>(string prompt, string errorMessage, Dictionary<TKey, TValue> dict, bool DisplayOptions = true, string OptionText = "Options: ")```
 * ```cs public static bool TryReadDataType<T>(out T result)```
