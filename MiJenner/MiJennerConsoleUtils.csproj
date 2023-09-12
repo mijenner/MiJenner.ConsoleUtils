@@ -8,7 +8,7 @@
     <RootNamespace>MiJenner</RootNamespace>
     <PackageId>MiJenner.ConsoleUtils</PackageId>
     <Title>MiJenner.ConsoleUtils</Title>
-    <Version>0.10.0</Version>
+    <Version>0.11.0</Version>
     <Authors>Michael Jenner</Authors>
     <Company>Jenner IT</Company>
     <Description>ConsoleUtils offer cross-platform utilities for easy interaction with a user.

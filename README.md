@@ -29,6 +29,9 @@ Below is listed the signatures of the methods:
 * ```cs public static string StringReadMultipleLines(string prompt, string instruction = "Type 3 empty lines to end")```
 
 # Examples 
+First, remember to to add a using instruction: 
+```cs using MiJenner;```
+
 Below are examples on how the library can be used: 
 ```cs 
 ConsoleUtils.OpenExplorerFinder();
