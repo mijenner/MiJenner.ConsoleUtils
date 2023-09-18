@@ -424,34 +424,65 @@ namespace MiJenner
             Console.Write(origText);
             ConsoleKeyInfo info;
             List<char> chars = new List<char>();
-            if (string.IsNullOrEmpty(origText) == false)
+            int cursorIndex = chars.Count;
+
+            if (!string.IsNullOrEmpty(origText))
             {
                 chars.AddRange(origText.ToCharArray());
+                cursorIndex = chars.Count;
             }
 
             while (true)
             {
                 info = Console.ReadKey(true);
+
                 if (info.Key == ConsoleKey.Backspace && Console.CursorLeft > pos)
                 {
-                    chars.RemoveAt(chars.Count - 1);
-                    Console.CursorLeft -= 1;
-                    Console.Write(' ');
-                    Console.CursorLeft -= 1;
-
+                    if (cursorIndex > 0)
+                    {
+                        cursorIndex--;
+                        chars.RemoveAt(cursorIndex);
+                        Console.CursorLeft--;
+                        Console.Write(new string(chars.Skip(cursorIndex).ToArray()));
+                        Console.Write(' '); // delete one char  
+                        Console.CursorLeft = pos + cursorIndex;
+                    }
                 }
                 else if (info.Key == ConsoleKey.Enter)
                 {
-                    Console.Write(Environment.NewLine); break;
+                    Console.Write(Environment.NewLine);
+                    break;
                 }
-                //Here you need create own checking of symbols
-                else if (char.IsLetterOrDigit(info.KeyChar) ||
-                   char.IsWhiteSpace(info.KeyChar))
+
+                else if (info.Key == ConsoleKey.LeftArrow && cursorIndex > 0)
                 {
+                    cursorIndex--;
+                    Console.CursorLeft--;
+                }
+                else if (info.Key == ConsoleKey.RightArrow && cursorIndex < chars.Count)
+                {
+                    cursorIndex++;
+                    Console.CursorLeft++;
+                }
+                else if (char.IsLetterOrDigit(info.KeyChar) ||
+                                                   char.IsWhiteSpace(info.KeyChar))
+                {
+                    chars.Insert(cursorIndex, info.KeyChar);
+                    cursorIndex++;
                     Console.Write(info.KeyChar);
-                    chars.Add(info.KeyChar);
+                    Console.Write(new string(chars.Skip(cursorIndex).ToArray()));
+                    Console.CursorLeft = pos + cursorIndex;
                 }
             }
+
+            // Clear the rest of the line if there are characters after the edited text.
+            int remainingCharacters = chars.Count - cursorIndex;
+            if (remainingCharacters > 0)
+            {
+                Console.Write(new string(' ', remainingCharacters));
+                Console.CursorLeft -= remainingCharacters;
+            }
+
             return new string(chars.ToArray());
         }
     }
