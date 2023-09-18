@@ -25,10 +25,10 @@ public static string ReadStringFromArray(string prompt, string errorMessage, str
 public static string ReadStringFromList(string prompt, string errorMessage, List<string> strings)
 public static T ReadEnum<T>(string prompt, string errorMessage) where T : struct, Enum
 public static TKey ReadDictKey<TKey, TValue>(string prompt, string errorMessage, Dictionary<TKey, TValue> dict, bool DisplayOptions = true, string OptionText = "Options: ")
-public static bool TryReadDataType<T>(out T result)
 public static string StringRemoveNonLettersENG(string input)
 public static string StringRemoveNonLettersAll(string input)
 public static string StringReadMultipleLines(string prompt, string instruction = "Type 3 empty lines to end")
+public static bool TryReadDataType<T>(out T result)
 ```
 
 # Examples 
