@@ -409,5 +409,50 @@ namespace MiJenner
 
             return userInput;
         }
+
+        /// <summary>
+        /// ReadLineWithEdit(text) prints out a text and lets user edit it.
+        /// On typing return the edited text is returned. 
+        /// </summary>
+        /// <param name="origText"></param>
+        /// <returns>
+        /// Returns the resulting string. 
+        /// </returns>
+        static public string ReadLineWithEdit(string origText)
+        {
+            int pos = Console.CursorLeft;
+            Console.Write(origText);
+            ConsoleKeyInfo info;
+            List<char> chars = new List<char>();
+            if (string.IsNullOrEmpty(origText) == false)
+            {
+                chars.AddRange(origText.ToCharArray());
+            }
+
+            while (true)
+            {
+                info = Console.ReadKey(true);
+                if (info.Key == ConsoleKey.Backspace && Console.CursorLeft > pos)
+                {
+                    chars.RemoveAt(chars.Count - 1);
+                    Console.CursorLeft -= 1;
+                    Console.Write(' ');
+                    Console.CursorLeft -= 1;
+
+                }
+                else if (info.Key == ConsoleKey.Enter)
+                {
+                    Console.Write(Environment.NewLine); break;
+                }
+                //Here you need create own checking of symbols
+                else if (char.IsLetterOrDigit(info.KeyChar) ||
+                   char.IsWhiteSpace(info.KeyChar))
+                {
+                    Console.Write(info.KeyChar);
+                    chars.Add(info.KeyChar);
+                }
+            }
+            return new string(chars.ToArray());
+        }
     }
 }

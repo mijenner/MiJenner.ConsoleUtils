@@ -20,6 +20,7 @@ public static DateTime ReadDate(string prompt, string errorMessage)
 public static decimal ReadDecimal(string prompt, string errorMessage)
 public static double ReadDouble(string prompt, string errorMessage)
 public static int ReadInt(string prompt, string errorMessage)
+static public string ReadLineWithEdit(string origText)
 public static string ReadStringFromArray(string prompt, string errorMessage, string[] strings)
 public static string ReadStringFromList(string prompt, string errorMessage, List<string> strings)
 public static T ReadEnum<T>(string prompt, string errorMessage) where T : struct, Enum
@@ -55,6 +56,12 @@ var choicesInt = new Dictionary<int, string>
    { {1, "Option 1" }, {2, "Option 2" }, {3, "Option 3" } };
 
 var g = ConsoleUtils.ReadDictKey<int, string>("Type dict key (int)", "Nope", choicesInt);
+
+string text = "Here is some text";
+Console.WriteLine("Original text : " + text);
+Console.Write("Edit the text : ");
+text = ConsoleUtils.ReadLineWithEdit(text);
+Console.WriteLine("After editing : " + text);
 ```
 
 # Nuget package 

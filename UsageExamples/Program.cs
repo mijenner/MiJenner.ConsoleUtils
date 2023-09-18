@@ -1,4 +1,5 @@
 ﻿using MiJenner;
+using System;
 using System.Collections.Generic;
 
 namespace UsageExamples
@@ -37,6 +38,12 @@ namespace UsageExamples
             { {1, "Option 1" }, {2, "Option 2" }, {3, "Option 3" } };
 
             var i = ConsoleUtils.ReadDictKey<int, string>("Type dict key (int)", "Nope", choicesInt);
+
+            string text = "Here is some text";
+            Console.WriteLine("Original text : " + text);
+            Console.Write("Edit the text : ");
+            text = ConsoleUtils.ReadLineWithEdit(text);
+            Console.WriteLine("After editing : " + text);
 
         }
     }
