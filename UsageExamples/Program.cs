@@ -10,7 +10,6 @@ namespace UsageExamples
         static void Main(string[] args)
         {
             ConsoleUtils.OpenExplorerFinder();
-
             // ConsoleUtils.OpenExplorerFinderPath(".");
 
             var a = ConsoleUtils.ReadBoolean("Please provide a boolean", "No, please provide a boolean", "t", "f");
