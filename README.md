@@ -32,7 +32,7 @@ public static bool TryReadDataType<T>(out T result)
 ```
 
 # Examples 
-First, remember to to add a using instruction: 
+First, remember to add a using instruction: 
 ```cs
 using MiJenner;
 ```
